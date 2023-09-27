@@ -10,4 +10,4 @@ app/data/uploads
 .remake
 .cache/
 
-_remake/.sessions
+_remake/
