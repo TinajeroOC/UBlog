@@ -3,8 +3,8 @@
     <div class="w-full">
       <h1 class="text-5xl font-bold">What's on your mind?</h1>
       <p class="py-6 text-xl">
-        UBlog is a platform where you can share your thoughts with the world. 
-        Whether you're a writer, photographer, sports fanatic or tech enthusiast, UBlog is the perfect place to speak your mind.
+        {{globalData.name}} is a platform where you can share your thoughts with the world. 
+        Whether you're a writer, photographer, sports fanatic or tech enthusiast, {{globalData.name}} is the perfect place to speak your mind.
       </p>
       {{#if currentUser}}
         <a class="btn btn-primary" href="/{{currentUser.details.username}}">View Blogs</a>
