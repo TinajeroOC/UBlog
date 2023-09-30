@@ -1,7 +1,31 @@
-<form action="/user/login" method="post">
-  <h1>Log in</h1>
-  <input type="text" name="username" placeholder="username" required>
-  <input type="password" name="password" placeholder="password" required>
-  <a href="/user/forgot">Forgot your password?</a>
-  <button type="submit">Log in</button>
-</form>
+{{ layout "access" }}
+<div class="w-full min-h-screen bg-base-200 flex justify-center items-center">
+  <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div class="card-body">
+      <div class="flex space-between">
+        <p class="text-xl font-semibold">UBlog</p>
+        <p class="text-lg text-right">Log In</p>
+      </div>
+      <form action="/user/login" method="post">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Username</span>
+          </label>
+          <input type="text" name="username" placeholder="username" class="input input-bordered" required />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Password</span>
+          </label>
+          <input type="password" name="password" placeholder="password" class="input input-bordered" required />
+          <label class="label">
+            <a href="/user/forgot" class="label-text-alt link link-hover">Forgot password?</a>
+          </label>
+        </div>
+        <div class="form-control mt-6">
+          <button type="submit" class="btn btn-primary">Log In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
