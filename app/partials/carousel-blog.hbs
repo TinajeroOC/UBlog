@@ -1,0 +1,11 @@
+<div class="carousel w-full">
+  {{#eachIndex blogs}}
+    <div id="blog-{{index}}" class="carousel-item relative w-full">
+      {{> card-blog blog=item}}
+      <div class="absolute overflow-visible flex justify-between transform -translate-y-1/2 left-0 right-0 top-1/2">
+        <a href="#blog-{{#compare index "===" 0}}{{minus ../range 1}}{{else}}{{minus index 1}}{{/compare}}" class="btn btn-circle">❮</a>
+        <a href="#blog-{{#compare index "===" (minus ../range 1)}}0{{else}}{{add index 1}}{{/compare}}" class="btn btn-circle">❯</a>
+      </div>
+    </div>
+  {{/eachIndex}}
+</div>
