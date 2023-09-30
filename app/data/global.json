@@ -1,1 +1,25 @@
-{}
+{
+  "dummyBlogs": [
+    {
+      "time": 1695989520000,
+      "user": "Steven",
+      "tag": "#tech",
+      "title": "Let's talk about the iPhone 15",
+      "text": "The iPhone 15 is here, and it's a solid upgrade over the iPhone 14. But is it enough of an upgrade to justify the upgrade price? On the outside, the iPhone 15 looks very similar to the iPhone 14. There's no new design language here, just some subtle changes like a slightly smaller notch and a new titanium frame on the Pro models. The biggest changes are on the inside. The iPhone 15 is powered by the new A17 Bionic chip, which is said to be up to 20% faster than the A16 Bionic chip in the iPhone 14. This means that the iPhone 15 will be able to handle even the most demanding tasks with ease. The iPhone 15 also has a new 48-megapixel main camera sensor. This allows for sharper images and better low-light performance. The camera system also has a new Cinematic mode that makes it easy to create professional-looking videos. Overall, the iPhone 15 is a solid upgrade over the iPhone 14. It's faster, has a better camera, and has some new features like Cinematic mode. But is it enough of an upgrade to justify the upgrade price?"
+    },
+    {
+      "time": 1695853800000,
+      "user": "Dan",
+      "tag": "#sports",
+      "title": "How Messi's move to MLS is a game-changer",
+      "text": "Lionel Messi's move to Inter Miami CF is the biggest signing in Major League Soccer history. It's a move that will have a seismic impact on the league, both on and off the field. On the field, Messi is one of the greatest players of all time. He's still capable of producing magic moments, and he'll be a huge draw for fans and sponsors alike. Messi's arrival could help MLS to attract more top players and improve the overall quality of the league. Off the field, Messi's move is a huge coup for MLS. It will put the league on the map and make it more attractive to fans and investors around the world. Messi's presence in MLS will also help to grow the game of soccer in the United States. My personal opinion is that Messi's move to MLS is a game-changer for the league. It's a move that will help MLS to become a more competitive league and attract more fans and attention. I'm excited to see what Messi can do for MLS, and I think his arrival is a sign of good things to come for the league."
+    },
+    {
+      "time": 1693336500000,
+      "user": "John",
+      "tag": "#movies",
+      "title": "Looking back at Jordan Peele's Nope (2022)",
+      "text": "Jordan Peele's latest film, Nope, is a visually stunning and thought-provoking film that explores themes of grief, trauma, and the power of storytelling. The film follows the Haywood siblings, OJ and Emerald, who run a horse ranch in California. When a mysterious and terrifying phenomenon begins to occur in the skies above their ranch, the Haywoods decide to use their skills as filmmakers to capture the event and make a fortune. Peele's film is a masterclass in filmmaking. The cinematography is breathtaking, and the score is hauntingly beautiful. Peele also does a masterful job of building suspense and dread. But Nope is more than just a visually stunning horror film. It's also a film that explores complex themes about grief, trauma, and the power of storytelling."
+    }
+  ]
+}

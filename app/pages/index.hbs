@@ -1,8 +1,17 @@
-<h1>Welcome to my app!</h1>
-<ul>
-  {{#if currentUser}}
-    <li><a href="/{{currentUser.details.username}}">Go to your dashboard</a></li>
-  {{else}}
-    <li><a href="/user/signup">Sign up for an account</a></li>
-  {{/if}}
-</ul>
+<div class="hero min-h-screen bg-base-200">
+  <div class="hero-content flex-col sm:gap-8 lg:flex-row">
+    <div class="w-full">
+      <h1 class="text-5xl font-bold">What's on your mind?</h1>
+      <p class="py-6 text-xl">
+        UBlog is a platform where you can share your thoughts with the world. 
+        Whether you're a writer, photographer, sports fanatic or tech enthusiast, UBlog is the perfect place to speak your mind.
+      </p>
+      {{#if currentUser}}
+        <a class="btn btn-primary" href="/{{currentUser.details.username}}">View Blogs</a>
+      {{else}}
+        <a class="btn btn-primary" href="/user/signup">Get Started</a>
+      {{/if}}
+    </div>
+    {{> carousel-blog blogs=globalData.dummyBlogs range=globalData.dummyBlogs.length}}
+  </div>
+</div>
