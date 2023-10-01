@@ -5,9 +5,9 @@
       <h2 class="card-title">{{blog.title}}</h2>
       <p>{{ellipsis blog.text 600}}</p>
     </div>
-    <div class="flex space-between">
-      <p class="font-semibold">{{blog.user}}</p>
-      <p class="font-semibold text-right">{{moment blog.time fromNow=""}}</p>
+    <div class="flex justify-between">
+      <span class="font-semibold">{{blog.user}}</span>
+      <span class="font-semibold text-right">{{moment blog.time fromNow=""}}</span>
     </div>
   </div>
 </div>
