@@ -9,7 +9,7 @@
     <div array sortable key="blogs" class="grid grid-cols-1 lg:grid-cols-2 auto-rows-max gap-4">
       {{#for blog in blogs}}
         <div class="card bg-base-100 h-fit">
-          <div object key:id="{{blog.id}}" key:title="@search" default:title="Title" key:text="@search" default:text="text" key:tag="@search" default:tag="#tag">
+          <div object key:id="{{blog.id}}" key:date="{{moment}}"key:title="@search" default:title="Title" key:text="@search" default:text="text" key:tag="@search" default:tag="#tag">
             <div class="card-body card-normal">
               <div target:tag="@innerText" class="badge badge-outline badge-accent">{{default blog.tag "#tag"}}</div>
               <div>
