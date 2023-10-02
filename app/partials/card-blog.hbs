@@ -3,7 +3,7 @@
     <div class="badge badge-outline badge-accent">{{blog.tag}}</div>
     <div>
       <h2 class="card-title">{{blog.title}}</h2>
-      <p>{{ellipsis blog.text 600}}</p>
+      <p class="break-words line-clamp-6 lg:line-clamp-10">{{blog.text}}</p>
     </div>
     <div class="flex justify-between">
       <span class="font-semibold">{{blog.username}}</span>
