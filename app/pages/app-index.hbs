@@ -1,13 +1,13 @@
-<div class="flex flex-col items-center min-h-screen min-w-full bg-base-200">
-  <div class="my-16 space-y-4 w-4/5 lg:max-w-7xl">
-    <div class="flex flex-col justify-center gap-4 xs:flex-row xs:justify-between">
+<div class=" min-h-screen min-w-full flex flex-col bg-base-200 items-center">
+  <div class="w-4/5 lg:max-w-7xl space-y-4 my-16">
+    <div class="flex flex-col xs:flex-row justify-between gap-4">
       {{#if isPageAuthor}}
-      <span class="inline-flex items-center justify-center font-semibold text-xl text-center">Your Blogs</span>
+      <span class="inline-flex items-center justify-center font-semibold text-xl">Your Blogs</span>
       <button new:blog="top" class="btn btn-primary">
         Create Blog
       </button>
       {{else}}
-      <span class="inline-flex items-center font-semibold text-xl">{{capitalize pageAuthor.details.username}}'s Blogs</span>
+      <span class="inline-flex items-center justify-center font-semibold text-xl">{{capitalize pageAuthor.details.username}}'s Blogs</span>
       {{/if}}
     </div>
     <div array sortable key="blogs" class="grid grid-cols-1 lg:grid-cols-2 auto-rows-max gap-4">
@@ -20,7 +20,7 @@
               <h2 target:title="@innerText" class="card-title break-words">{{default blog.title "Title"}}</h2>
               <p target:text="@innerText" class="line-clamp-6 break-words" >{{default blog.text "Text"}}</p>
             </div>
-            <div class="card-actions justify-end absolute bottom-8 right-8">
+            <div class="card-actions absolute bottom-8 right-8">
               <button class="btn">
                 <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                   <path d="M9 1.334C7.06.594 1.646-.84.293.653a1.158 1.158 0 0 0-.293.77v13.973c0 .193.046.383.134.55.088.167.214.306.366.403a.932.932 0 0 0 .5.147c.176 0 .348-.05.5-.147 1.059-.32 6.265.851 7.5 1.65V1.334ZM19.707.653C18.353-.84 12.94.593 11 1.333V18c1.234-.799 6.436-1.968 7.5-1.65a.931.931 0 0 0 .5.147.931.931 0 0 0 .5-.148c.152-.096.279-.235.366-.403.088-.167.134-.357.134-.55V1.423a1.158 1.158 0 0 0-.293-.77Z"/>
@@ -37,8 +37,8 @@
                 <span class="hidden xs:inline-block">Edit</span>
               </button>
               <dialog id="edit_blog_modal_{{blog.id}}" class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box items-center text-center">
-                  <h3 class="font-bold text-lg mb-4">Edit Blog</h1>
+                <div class="modal-box text-center">
+                  <h3 class="text-lg font-bold  mb-4">Edit Blog</h1>
                   <div class="form-control">
                     <label class="label">
                       <span class="label-text">Title</span>
@@ -70,7 +70,7 @@
                   </div>
                   <div class="modal-action">
                     <form method="dialog">
-                      <button class="btn btn-block">
+                      <button class="btn">
                         Close
                       </button>
                     </form>
@@ -85,8 +85,8 @@
                 <span class="hidden xs:inline-block">Delete</span>
               </button>
               <dialog id="delete_blog_modal_{{blog.id}}" class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box items-center text-center">
-                  <h3 class="font-bold text-lg mb-4">Delete Blog</h3>
+                <div class="modal-box text-center">
+                  <h3 class="text-lg font-bold mb-4">Delete Blog</h3>
                   <p>Are you sure you want to delete this blog?</p>
                   <div class="modal-action justify-center">
                     <form method="dialog">
