@@ -1,10 +1,10 @@
 {{ layout "access" }}
 <div class="w-full min-h-screen bg-base-200 flex justify-center items-center">
-  <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+  <div class="card flex-shrink-0 w-11/12 max-w-sm shadow-2xl bg-base-100">
     <div class="card-body">
-      <div class="flex space-between">
-        <p class="text-xl font-semibold">{{globalData.name}}</p>
-        <p class="text-lg text-right">Forgot Password</p>
+      <div class="flex flex-row justify-between">
+        <span class="inline-flex items-center font-semibold text-xl">{{globalData.name}}</span>
+        <span class="inline-flex items-center text-lg">Forgot Password</span>
       </div>
       <form action="/user/forgot" method="post">
         <div class="form-control">

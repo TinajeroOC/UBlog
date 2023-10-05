@@ -1,13 +1,13 @@
-<div class=" min-h-screen min-w-full flex flex-col bg-base-200 items-center">
+<div class="min-h-screen min-w-full flex flex-col bg-base-200 items-center">
   <div class="w-4/5 lg:max-w-7xl space-y-4 my-16">
     <div class="flex flex-col xs:flex-row justify-between gap-4">
       {{#if isPageAuthor}}
-      <span class="inline-flex items-center justify-center font-semibold text-xl">Your Blogs</span>
+      <span class="inline-flex items-center font-semibold text-xl">Your Blogs</span>
       <button new:blog="top" class="btn btn-primary">
         Create Blog
       </button>
       {{else}}
-      <span class="inline-flex items-center justify-center font-semibold text-xl">{{capitalize pageAuthor.details.username}}'s Blogs</span>
+      <span class="inline-flex items-center font-semibold text-xl">{{capitalize pageAuthor.details.username}}'s Blogs</span>
       {{/if}}
     </div>
     <div array sortable key="blogs" class="grid grid-cols-1 lg:grid-cols-2 auto-rows-max gap-4">
