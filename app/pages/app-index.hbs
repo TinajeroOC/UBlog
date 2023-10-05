@@ -12,8 +12,8 @@
     </div>
     <div array sortable key="blogs" class="grid grid-cols-1 lg:grid-cols-2 auto-rows-max gap-4">
       {{#for blog in blogs}}
-      <div class="card bg-base-100">
-        <div object key:id="{{blog.id}}" key:date="{{moment}}"key:title="@search" default:title="Title" key:text="@search" default:text="text" key:tag="@search" default:tag="#tag">
+      <div object key:id="{{blog.id}}" key:date="{{moment}}"key:title="@search" default:title="Title" key:text="@search" default:text="text" key:tag="@search" default:tag="#tag">
+        <div class="card bg-base-100">
           <div class="card-body card-normal pb-24">
             <div target:tag="@innerText" class="badge badge-outline badge-accent">{{default blog.tag "#tag"}}</div>
             <div>
@@ -79,9 +79,9 @@
               </dialog>
               {{! Delete Button and Modal}}
               <button class="btn" onclick="delete_blog_modal_{{blog.id}}.showModal()">
-              <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z"/>
-              </svg>
+                <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                  <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z"/>
+                </svg>
                 <span class="hidden xs:inline-block">Delete</span>
               </button>
               <dialog id="delete_blog_modal_{{blog.id}}" class="modal modal-bottom sm:modal-middle">
