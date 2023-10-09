@@ -1,0 +1,40 @@
+<div class="card shadow-lg bg-base-100">
+  <div class="relative">
+    <img src="{{#if pageAuthor.appData.profile.banner}}{{pageAuthor.appData.profile.banner}}{{else}}/assets/images/DefaultBanner.jpg{{/if}}" class="rounded-t-2xl aspect-video">
+    <div class="tooltip avatar absolute -bottom-[2.0rem] left-1/2 transform -translate-x-1/2" data-tip="Change your profile picture">
+      <div class="w-[7rem] rounded-full ring ring-base-200 ring-offset-base-100 ring-offset-2">
+        <img src="{{#if pageAuthor.appData.profile.picture}}{{pageAuthor.appData.profile.picture}}{{else}}/assets/images/DefaultPicture.jpg{{/if}}">
+      </div>
+    </div>
+  </div>
+  <div class="card-body card-normal">
+    <div class="flex flex-row justify-between gap-2">
+      <span class="inline-flex items-center font-semibold text-xl">About</span>
+      {{#if isPageAuthor}}
+      <a href="/{{pageAuthor.details.username}}/settings" class="btn btn-sm btn-neutral">Edit</a>
+      {{/if}}
+    </div>
+    <div class="flex flex-col justify-between bg-base-200 p-4 rounded-2xl gap-2">
+      <span class="font-semibold">Username</span>
+      <span>{{pageAuthor.details.username}}</span>
+    </div>
+    {{#if pageAuthor.appData.profile.name}}
+    <div class="flex flex-col justify-between bg-base-200 p-4 rounded-2xl gap-2">
+      <span class="font-semibold">Name</span>
+      <span>{{pageAuthor.appData.profile.name}}</span>
+    </div>
+    {{/if}}
+    {{#if pageAuthor.appData.profile.location}}
+    <div class="flex flex-col justify-between bg-base-200 p-4 rounded-2xl gap-2">
+      <span class="font-semibold">Location</span>
+      <span>{{pageAuthor.appData.profile.location}}</span>
+    </div>
+    {{/if}}
+    {{#if pageAuthor.appData.profile.bio}}
+    <div class="flex flex-col bg-base-200 p-4 rounded-2xl gap-2">
+      <span class="font-semibold">Bio</span>
+      <p>{{pageAuthor.appData.profile.bio}}</p>
+    </div>
+    {{/if}}
+  </div>
+</div>
