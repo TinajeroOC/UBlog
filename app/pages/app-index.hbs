@@ -1,107 +1,114 @@
-<div class="min-h-screen min-w-full flex flex-col bg-base-200 items-center">
-  <div class="w-4/5 lg:max-w-7xl space-y-4 my-16">
-    <div class="flex flex-col xs:flex-row justify-between gap-4">
-      {{#if isPageAuthor}}
-      <span class="inline-flex items-center font-semibold text-xl">Your Blogs</span>
-      <button new:blog="top" class="btn btn-primary">
-        Create Blog
-      </button>
-      {{else}}
-      <span class="inline-flex items-center font-semibold text-xl">{{capitalize pageAuthor.details.username}}'s Blogs</span>
-      {{/if}}
-    </div>
-    <div array sortable key="blogs" class="grid grid-cols-1 lg:grid-cols-2 auto-rows-max gap-4">
-      {{#for blog in blogs}}
-      <div object key:id="{{blog.id}}" key:date="{{moment}}"key:title="@search" default:title="Title" key:text="@search" default:text="text" key:tag="@search" default:tag="#tag">
-        <div class="card bg-base-100">
-          <div class="card-body card-normal pb-24">
-            <div target:tag="@innerText" class="badge badge-outline badge-accent">{{default blog.tag "#tag"}}</div>
-            <div>
-              <h2 target:title="@innerText" class="card-title break-words">{{default blog.title "Title"}}</h2>
-              <p target:text="@innerText" class="line-clamp-6 break-words" >{{default blog.text "Text"}}</p>
-            </div>
-            <div class="card-actions absolute bottom-8 right-8">
-              <button class="btn">
-                <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-                  <path d="M9 1.334C7.06.594 1.646-.84.293.653a1.158 1.158 0 0 0-.293.77v13.973c0 .193.046.383.134.55.088.167.214.306.366.403a.932.932 0 0 0 .5.147c.176 0 .348-.05.5-.147 1.059-.32 6.265.851 7.5 1.65V1.334ZM19.707.653C18.353-.84 12.94.593 11 1.333V18c1.234-.799 6.436-1.968 7.5-1.65a.931.931 0 0 0 .5.147.931.931 0 0 0 .5-.148c.152-.096.279-.235.366-.403.088-.167.134-.357.134-.55V1.423a1.158 1.158 0 0 0-.293-.77Z"/>
-                </svg>
-                <span class="hidden xs:inline-block">Read</span>
-              </button>
-              {{#if ../isPageAuthor}}
-              {{! Edit Button and Modal}}
-              <button class="btn" onclick="edit_blog_modal_{{blog.id}}.showModal()">
-                <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-                  <path d="M12.687 14.408a3.01 3.01 0 0 1-1.533.821l-3.566.713a3 3 0 0 1-3.53-3.53l.713-3.566a3.01 3.01 0 0 1 .821-1.533L10.905 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V11.1l-3.313 3.308Zm5.53-9.065.546-.546a2.518 2.518 0 0 0 0-3.56 2.576 2.576 0 0 0-3.559 0l-.547.547 3.56 3.56Z"/>
-                  <path d="M13.243 3.2 7.359 9.081a.5.5 0 0 0-.136.256L6.51 12.9a.5.5 0 0 0 .59.59l3.566-.713a.5.5 0 0 0 .255-.136L16.8 6.757 13.243 3.2Z"/>
-                </svg>
-                <span class="hidden xs:inline-block">Edit</span>
-              </button>
-              <dialog id="edit_blog_modal_{{blog.id}}" class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box text-center">
-                  <h3 class="text-lg font-bold  mb-4">Edit Blog</h1>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Title</span>
-                    </label>
-                    <input update:title value="{{blog.title}}" type="text" name="title" placeholder="title" class="input input-md input-bordered">
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Text</span>
-                    </label>
-                    <textarea update:text class="textarea textarea-bordered" placeholder="text">{{blog.text}}</textarea>
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Tag</span>
-                    </label>
-                    <select update:tag class="select select-bordered w-full">
-                      <option disabled selected>#tag</option>
-                      <option>#lifestyle</option>
-                      <option>#fashion</option>
-                      <option>#business</option>
-                      <option>#tech</option>
-                      <option>#science</option>
-                      <option>#sports</option>
-                      <option>#tv</option>
-                      <option>#movies</option>
-                      <option>#games</option>
-                    </select>
-                  </div>
-                  <div class="modal-action">
-                    <form method="dialog">
-                      <button class="btn">
-                        Close
-                      </button>
-                    </form>
-                  </div>
+<div class="min-h-screen min-w-full flex flex-col items-center bg-base-200">
+  <div class="flex flex-col-reverse md:flex-row w-11/12 max-w-7xl my-16 justify-between gap-16">
+    <div class="flex flex-col w-full">
+      <div class="flex flex-row justify-between gap-4">
+        <span class="inline-flex items-center font-semibold text-2xl">Blogs</span>
+        {{#if isPageAuthor}}
+        <button new:blog="top" class="btn btn-primary">
+          Create Blog
+        </button>
+        {{/if}}
+      </div>
+      <div class="divider"></div>
+      <div array sortable key="blogs" class="grid grid-cols-1 auto-rows-max gap-4">
+        {{#for blog in blogs}}
+        <div object key:id="{{blog.id}}" key:date="{{moment}}" key:title="@search" default:title="Title" key:text="@search" default:text="Text" key:tag="@search" default:tag="#tag">
+          <div class="card shadow-lg bg-base-100 h-full">
+            <div class="card-body card-normal pb-24">
+              <div target:tag="@innerText" class="badge badge-outline badge-accent">{{default blog.tag "#tag"}}</div>
+              <div>
+                <h2 target:title="@innerText" class="card-title break-words">{{default blog.title "Title"}}</h2>
+                <p target:text="@innerText" class="line-clamp-6 break-words" >{{default blog.text "Text"}}</p>
+              </div>
+              <div class="card-actions absolute bottom-8 right-8">
+                <div class="tooltip" data-tip="Read More">
+                  <button class="btn">
+                    <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                      <path d="M9 1.334C7.06.594 1.646-.84.293.653a1.158 1.158 0 0 0-.293.77v13.973c0 .193.046.383.134.55.088.167.214.306.366.403a.932.932 0 0 0 .5.147c.176 0 .348-.05.5-.147 1.059-.32 6.265.851 7.5 1.65V1.334ZM19.707.653C18.353-.84 12.94.593 11 1.333V18c1.234-.799 6.436-1.968 7.5-1.65a.931.931 0 0 0 .5.147.931.931 0 0 0 .5-.148c.152-.096.279-.235.366-.403.088-.167.134-.357.134-.55V1.423a1.158 1.158 0 0 0-.293-.77Z"/>
+                    </svg>
+                  </button>
                 </div>
-              </dialog>
-              {{! Delete Button and Modal}}
-              <button class="btn" onclick="delete_blog_modal_{{blog.id}}.showModal()">
-                <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                  <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z"/>
-                </svg>
-                <span class="hidden xs:inline-block">Delete</span>
-              </button>
-              <dialog id="delete_blog_modal_{{blog.id}}" class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box text-center">
-                  <h3 class="text-lg font-bold mb-4">Delete Blog</h3>
-                  <p>Are you sure you want to delete this blog?</p>
-                  <div class="modal-action justify-center">
-                    <form method="dialog">
-                      <button class="btn">Cancel</button>
-                    </form>
-                    <button remove class="btn btn-error">Delete</button>
-                  </div>
+                {{#if ../isPageAuthor}}
+                {{! Edit Button and Modal}}
+                <div class="tooltip" data-tip="Edit Blog">
+                  <button class="btn" onclick="edit_blog_modal_{{blog.id}}.showModal()">
+                    <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                      <path d="M12.687 14.408a3.01 3.01 0 0 1-1.533.821l-3.566.713a3 3 0 0 1-3.53-3.53l.713-3.566a3.01 3.01 0 0 1 .821-1.533L10.905 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V11.1l-3.313 3.308Zm5.53-9.065.546-.546a2.518 2.518 0 0 0 0-3.56 2.576 2.576 0 0 0-3.559 0l-.547.547 3.56 3.56Z"/>
+                      <path d="M13.243 3.2 7.359 9.081a.5.5 0 0 0-.136.256L6.51 12.9a.5.5 0 0 0 .59.59l3.566-.713a.5.5 0 0 0 .255-.136L16.8 6.757 13.243 3.2Z"/>
+                    </svg>
+                  </button>
                 </div>
-              </dialog>
-              {{/if}}
+                <dialog id="edit_blog_modal_{{blog.id}}" class="modal modal-bottom sm:modal-middle">
+                  <div class="modal-box text-center">
+                    <h3 class="text-lg font-bold  mb-4">Edit Blog</h1>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Title</span>
+                      </label>
+                      <input update:title value="{{blog.title}}" type="text" name="title" placeholder="title" class="input input-md input-bordered">
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Text</span>
+                      </label>
+                      <textarea update:text class="textarea textarea-bordered" placeholder="text">{{blog.text}}</textarea>
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Tag</span>
+                      </label>
+                      <select update:tag class="select select-bordered w-full">
+                        <option disabled selected>#tag</option>
+                        <option>#lifestyle</option>
+                        <option>#fashion</option>
+                        <option>#business</option>
+                        <option>#tech</option>
+                        <option>#science</option>
+                        <option>#sports</option>
+                        <option>#tv</option>
+                        <option>#movies</option>
+                        <option>#games</option>
+                      </select>
+                    </div>
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <button class="btn">
+                          Close
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+                {{! Delete Button and Modal}}
+                <div class="tooltip" data-tip="Delete Blog">
+                  <button class="btn" onclick="delete_blog_modal_{{blog.id}}.showModal()">
+                    <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                      <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z"/>
+                    </svg>
+                  </button>
+                </div>
+                <dialog id="delete_blog_modal_{{blog.id}}" class="modal modal-bottom sm:modal-middle">
+                  <div class="modal-box text-center">
+                    <h3 class="text-lg font-bold mb-4">Delete Blog</h3>
+                    <p>Are you sure you want to delete this blog?</p>
+                    <div class="modal-action justify-center">
+                      <form method="dialog">
+                        <button class="btn">Cancel</button>
+                      </form>
+                      <button remove class="btn btn-error">Delete</button>
+                    </div>
+                  </div>
+                </dialog>
+                {{/if}}
+              </div>
             </div>
           </div>
         </div>
+        {{/for}}
       </div>
-      {{/for}}
+    </div> 
+    <div class="max-w-full md:max-w-xs">
+      {{> card-profile}}
     </div>
   </div>
 </div>
