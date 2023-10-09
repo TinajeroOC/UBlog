@@ -1,7 +1,7 @@
 <div class="card shadow-lg bg-base-100">
   <div class="relative">
     <img src="{{#if pageAuthor.appData.profile.banner}}{{pageAuthor.appData.profile.banner}}{{else}}/assets/images/DefaultBanner.jpg{{/if}}" class="rounded-t-2xl aspect-video">
-    <div class="tooltip avatar absolute -bottom-[2.0rem] left-1/2 transform -translate-x-1/2" data-tip="Change your profile picture">
+    <div class="avatar absolute -bottom-[2.0rem] left-1/2 transform -translate-x-1/2">
       <div class="w-[7rem] rounded-full ring ring-base-200 ring-offset-base-100 ring-offset-2">
         <img src="{{#if pageAuthor.appData.profile.picture}}{{pageAuthor.appData.profile.picture}}{{else}}/assets/images/DefaultPicture.jpg{{/if}}">
       </div>
