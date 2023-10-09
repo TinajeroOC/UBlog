@@ -10,8 +10,8 @@
           </div>
         </div>
         <div object key:picture="@search">
-          <div class="tooltip avatar absolute -bottom-1/4 left-1/2 transform -translate-x-1/2" data-tip="Change your profile picture">
-            <div class="max-w-[11rem] rounded-full ring ring-base-200 ring-offset-base-100 ring-offset-2">
+          <div class="tooltip avatar absolute -bottom-[2.0rem] left-1/2 transform -translate-x-1/2" data-tip="Change your profile picture">
+            <div class="max-w-[8rem] xs:max-w-[10rem] rounded-full ring ring-base-200 ring-offset-base-100 ring-offset-2">
               <input id="pictureUpload" update:picture type="file" class="hidden">
               <img id="pictureButton" target:picture="@attr:src" src="{{#if currentUser.appData.profile.picture}}{{currentUser.appData.profile.picture}}{{else}}/assets/images/DefaultPicture.jpg{{/if}}">
             </div>
