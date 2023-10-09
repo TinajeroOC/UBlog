@@ -25,15 +25,20 @@
       <a class="btn btn-ghost normal-case text-xl" href="/{{currentUser.details.username}}">{{globalData.name}}</a>
     </div>
     <div class="navbar-end">
-      {{#if currentUser }}
+      {{#if currentUser}}
         <div class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost btn-circle avatar">
             <div class="w-10 rounded-full">
-              <img src="/assets/images/avatar.jpg" />
+              {{#if currentUser.appData.profile.picture}}
+              <img src="{{currentUser.appData.profile.picture}}">
+              {{else}}
+              <img src="/assets/images/DefaultPicture.jpg" />
+              {{/if}}
             </div>
           </label>
           <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a href="/user/logout">Logout</a></li>
+            <li><a href="/{{currentUser.details.username}}/settings">Settings</a></li>
+            <li><a href="/user/logout" class="text-error">Logout</a></li>
           </ul>
         </div>
       {{else}}

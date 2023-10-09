@@ -1,0 +1,53 @@
+<div class="w-full min-h-screen bg-base-200 flex justify-center items-center">
+  {{#if isPageAuthor}}
+  <div class="card card-normal w-11/12 max-w-lg my-4 shadow-2xl bg-base-100">
+    <div object key="profile">
+      <div class="relative hover:cursor-pointer">
+        <div object key:banner="@search">
+          <div class="tooltip" data-tip="Change your profile banner">
+            <input id="bannerUpload" update:banner type="file" class="hidden">
+            <img id="bannerButton" target:banner="@attr:src" src="{{#if currentUser.appData.profile.banner}}{{currentUser.appData.profile.banner}}{{else}}/assets/images/DefaultBanner.jpg{{/if}}" class="rounded-t-2xl aspect-video">
+          </div>
+        </div>
+        <div object key:picture="@search">
+          <div class="tooltip avatar absolute -bottom-1/4 left-1/2 transform -translate-x-1/2" data-tip="Change your profile picture">
+            <div class="max-w-[11rem] rounded-full ring ring-base-200 ring-offset-base-100 ring-offset-2">
+              <input id="pictureUpload" update:picture type="file" class="hidden">
+              <img id="pictureButton" target:picture="@attr:src" src="{{#if currentUser.appData.profile.picture}}{{currentUser.appData.profile.picture}}{{else}}/assets/images/DefaultPicture.jpg{{/if}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flex flex-row justify-between">
+          <span class="inline-flex items-center font-semibold text-xl break-all">Profile</span>
+          <span class="inline-flex items-center text-lg text-right">Settings</span>
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Name</span>
+          </label>
+          <input object key:name="@value" placeholder="Name" value="{{currentUser.appData.profile.name}}" class="input input-bordered" />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Location</span>
+          </label>
+          <input object key:location="@value" placeholder="Location" value="{{currentUser.appData.profile.location}}" class="input input-bordered" />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Bio</span>
+          </label>
+          <textarea object key:bio="@value" placeholder="Bio" class="textarea textarea-bordered w-full max-h-32">{{currentUser.appData.profile.bio}}</textarea>
+        </div>
+        <div class="card-actions mt-2">
+          <button save class="btn btn-primary btn-block">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  {{> no-access}}
+  {{/if}}
+</div>
