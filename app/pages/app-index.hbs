@@ -11,8 +11,9 @@
       </div>
       <div class="divider"></div>
       <div array sortable key="blogs" class="grid grid-cols-1 auto-rows-max gap-4">
-        {{#for blog in blogs}}
-        <div object key:id="{{blog.id}}" key:date="{{moment}}" key:title="@search" default:title="Title" key:text="@search" default:text="Text" key:tag="@search" default:tag="#tag">
+      {{#for blog in blogs}}
+        <div object key:id="{{blog.id}}" key:date="{{moment}}" key:title="@search" default:title="Title" key:text="@search" default:text="Text" key:tag="@search" default:tag="#tag" key:visible="{{default blog.visible "false"}}" class="{{#and (isFalsey ../isPageAuthor) (isFalsey blog.visible)}}hidden{{/and}}">
+        {{#or ../isPageAuthor (isTruthy blog.visible)}}
           <div class="card shadow-lg bg-base-100 h-full">
             <div class="card-body card-normal pb-24">
               <div target:tag="@innerText" class="badge badge-outline badge-accent">{{default blog.tag "#tag"}}</div>
@@ -71,6 +72,15 @@
                           <option>#games</option>
                         </select>
                       </div>
+                      <div class="form-control">
+                        <label class="label cursor-pointer gap-4">
+                          <div class="flex flex-col gap-1">
+                            <span class="label-text text-left">Publish</span> 
+                            <span class="label-text-alt text-left">Allow others to read this blog?</span>
+                          </div>
+                          <input update:visible type="checkbox" class="toggle toggle-success" {{#isTruthy blog.visible}}checked{{/isTruthy}} />
+                        </label>
+                      </div>
                     </div>
                     <div class="modal-action">
                       <form method="dialog">
@@ -105,8 +115,9 @@
               </div>
             </div>
           </div>
+        {{/or}}
         </div>
-        {{/for}}
+      {{/for}}
       </div>
     </div> 
     <div class="max-w-full md:max-w-xs">
