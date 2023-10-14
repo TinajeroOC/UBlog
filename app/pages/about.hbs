@@ -1,73 +1,22 @@
-<div class="space-x-6">
-    <!-- Inspirational Quote -->
-    <div class="block">
-        <h1 class="text-center font-bold text-xl">Yesterday is history, Tomorrow is a mystery, but Today is a gift. That is why it is called the present.</h1>
+<div class="min-h-screen w-full flex flex-col items-center justify-center bg-base-200">
+  <div class="flex flex-col gap-8 w-11/12 max-w-7xl my-16">
+    <div>
+      <h1 class="text-2xl font-semibold mb-4">About Us</h1>
+      <div>
+        <p class="text-left text-xl">
+          Here at UBlog, we share the belief that everyone has a story to tell. With that, we decided to make it easy for people from around the globe to share that story.
+          Whether it's someone sharing their experience doing a cross country road trip, someone's advice for fitness routines, or someone's opinion of the latest film, UBlog is the place to share it.
+          UBlog is a free and open platform for everyone to use. Get started today and tell us what's on your mind!
+        </p>
+      </div>
     </div>
-
-    <!-- Person 1 -->
-    <div class="flex flex-col gap-2 w-fit p-10">
-        <div class="flex flex-row items-center gap-4">
-            <div class="avatar w-64">
-                <div class="mask mask-circle">
-                    <img class="float-left" src="assets/images/esteban.jpg"/>
-                </div>
-            </div>
-            <ul>
-                <li><h3 class="font-bold text-lg">Esteban Tinajero</h3></li>
-                <li>Junior at California State University, Fullerton</li>
-                <li>Computer Science, Full Stack Engineering</li>
-                <li>Located in Orange</li>
-            </ul>
-        </div>
+    <div>
+      <h1 class="text-2xl font-semibold mb-4">Our Team</h1>
+      <div class="grid grid-cols-1 lg:grid-cols-2 auto-rows-max gap-4">
+        {{#each globalData.teamMembers}}
+          {{> card-team-member imageName=this.imageName name=this.name details=this.details }}
+        {{/each}}
+      </div>
     </div>
-    <!-- Person 2 -->
-    <div class="flex flex-col gap-2 w-fit p-10">
-        <div class="flex flex-row items-center gap-4">
-            <div class="avatar w-64">
-                <div class="mask mask-circle">
-                    <img class="float-left" src="assets/images/amritpaul.jpg"/>
-                </div>
-            </div>
-            <ul>
-                <li><h3 class="font-bold text-lg">Amritpaul Sidhu</h3></li>
-                <li>Student at California State University, Fullerton</li>
-                <li>Located in San Bernadino County</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Person 3 -->
-    <div class="flex flex-col gap-2 w-fit p-10">
-        <div class="flex flex-row items-center gap-4">
-            <div class="avatar w-64">
-                <div class="mask mask-circle">
-                    <img class="float-left" src="assets/images/gerami.jpg"/>
-                </div>
-            </div>
-            <ul>
-                <li><h3 class="font-bold text-lg">Gerami Sadeghi</h3></li>
-                <li>Senior Software Developer Engineer at California State University, Fullerton</li>
-                <li>Systems Programmer at California State University, Fullerton</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Person 4 -->
-        <div class="flex flex-col gap-2 w-fit p-10">
-        <div class="flex flex-row items-center gap-4">
-            <div class="avatar w-64">
-                <div class="mask mask-circle">
-                    <img class="float-left" src="assets/images/ali.jpg"/>
-                </div>
-            </div>
-            <ul>
-                <li><h3 class="font-bold text-lg">Ali Zand</h3></li>
-                <li>CSUF Junior Student</li>
-                <li>Studying to become full stack developer</li>
-                <li>Located in Orange County</li>
-                <li>Loves playing board games and video games</li>
-                <li>Watches anime and plays sports</li>
-            </ul>
-        </div>
-    </div>
+  </div>
 </div>

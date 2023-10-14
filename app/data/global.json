@@ -22,5 +22,44 @@
       "title": "Looking back at Jordan Peele's Nope (2022)",
       "text": "Jordan Peele's latest film, Nope, is a visually stunning and thought-provoking film that explores themes of grief, trauma, and the power of storytelling. The film follows the Haywood siblings, OJ and Emerald, who run a horse ranch in California. When a mysterious and terrifying phenomenon begins to occur in the skies above their ranch, the Haywoods decide to use their skills as filmmakers to capture the event and make a fortune. Peele's film is a masterclass in filmmaking. The cinematography is breathtaking, and the score is hauntingly beautiful. Peele also does a masterful job of building suspense and dread. But Nope is more than just a visually stunning horror film. It's also a film that explores complex themes about grief, trauma, and the power of storytelling."
     }
+  ],
+  "teamMembers": [
+    {
+      "name": "Esteban Tinajero",
+      "imageName": "Esteban.jpg",
+      "details": [
+        "From Orange County, CA",
+        "Student at California State University, Fullerton",
+        "Studying Computer Science, Full Stack Engineering"
+      ]
+    },
+    {
+      "name": "Ali Zand",
+      "imageName": "Ali.jpg",
+      "details": [
+        "From Orange County, CA",
+        "Student at California State University, Fullerton",
+        "Studying Computer Science, Full Stack Engineering",
+        "Interests: Board games, video games, anime and sports"
+      ]
+    },
+    {
+      "name": "Gerami Sadeghi",
+      "imageName": "Gerami.jpg",
+      "details": [
+        "From Orange County, CA",
+        "Student at California State University, Fullerton",
+        "Studying Computer Science, Systems Programming"
+      ]
+    },
+    {
+      "name": "Amritpaul Sidhu",
+      "imageName": "Amritpaul.jpg",
+      "details": [
+        "From San Bernandino County, CA",
+        "Student at California State University, Fullerton",
+        "Studying Computer Science, Full Stack Engineering"
+      ]
+    }
   ]
 }
