@@ -1,35 +1,53 @@
-# Create an app! 🪂
+# UBlog
 
-Create your first Remake app:
+## About
+
+UBlog is a full-stack web application for creating blogs. It is built using [Remake.js](https://remaketheweb.com/) and [Tailwind CSS](https://tailwindcss.com/) (+ [DaisyUI](https://daisyui.com/)) for styling.
+
+## Features
+
+- Blog creation (w/ tags, title, content, visibility)
+- User profiles (w/ picture, banner, bio)
+- User pages to preview blogs and profile
+
+## Installation
+
+UBlog requires Node.js V16+ to run.
+
+1. Clone the repository
 
 ```
-npm install -g remake
-remake create your-remake-app
+git clone https://github.com/TinajeroOC/UBlog.git
+cd UBlog
 ```
 
-Now you have a Trello clone app! 🤩
-
-# Get your app running! 🛵
-
-Use the following commands to start the development server:
+2. Install dependencies
 
 ```
-cd your-remake-app
+npm install
+```
+
+3. Run remake configuration script
+
+```
+#!/usr/bin/env node
+
+module.paths.push('./_remake')
+
+const nanoidGenerate = require('nanoid/generate')
+const dotRemake = require('utils/dot-remake')
+
+dotRemake.writeDotRemake({
+  generateUniqueIds: true,
+  port: 3000,
+  sessionSecret: nanoidGenerate('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 24)
+})
+```
+
+> Create this file in the root directory and run it using `node {script}`
+
+4. Run application in development mode
+
+```
 npm run dev
 ```
-
-# Learn how Remake works! 👩‍💻👨‍💻
-
-Look in the "app" directory to see all the code for the Trello clone app:
-
-Inside the `/app/pages` directory you'll find the `app-index.hbs` file.
-
-This file includes the entire Trello clone app! 👍
-
-# Start from scratch 👨‍🎨👩‍🎨
-
-If you want to start from scratch, follow the instructions in /app/README.md
-
-# Full Remake Docs
-
-**IMPORTANT:** A NEW VERSION of this framework was just released. **Don't use the current docs**. For now, you can use this [thorough recipes page](https://recipes.remaketheweb.com/) to learn the new syntax.
