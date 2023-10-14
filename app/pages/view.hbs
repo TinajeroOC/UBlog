@@ -1,9 +1,10 @@
-<div class="w-full min-h-screen bg-base-200 flex justify-center items-center">
+<div class="w-full min-h-screen bg-base-200 flex justify-center">
   {{#or (isTruthy currentItem.visible) isPageAuthor}}
-  <div class="container mx-auto my-12 p-4">
+  <div class="container mx-auto my-16 p-4">
     <div class="mb-6 flex justify-start align-center">
       <a href="/{{currentUser.details.username}}" class="btn btn-primary">Back to Blogs</a>
     </div>
+    <div class="divider"></div>
     <div class="card shadow-lg bg-base-100">
       <div class="card-body card-normal">
         <div class="badge badge-outline badge-accent">{{currentItem.tag}}</div>
@@ -13,6 +14,7 @@
           </div>
         </div>
       </div>
+    </div>
   </div>
   {{else}}
     {{> no-access}}
