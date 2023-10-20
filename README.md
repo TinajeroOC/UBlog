@@ -1,7 +1,5 @@
 # UBlog
 
-## About
-
 UBlog is a full-stack web application for creating blogs. It is built using [Remake.js](https://remaketheweb.com/) and [Tailwind CSS](https://tailwindcss.com/) (+ [DaisyUI](https://daisyui.com/)) for styling.
 
 ## Features
