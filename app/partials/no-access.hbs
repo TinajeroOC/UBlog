@@ -1,15 +1,17 @@
-<div class="card card-normal w-11/12 max-w-lg my-4 shadow-2xl bg-base-100">
-  <div class="bg-base-300 rounded-t-2xl">
-    <svg class="text-gray-900 dark:text-gray-100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><g transform="translate(-40.495178-.000007)"><g transform="matrix(1.483052 0 0 1.483052-289.041621-141.640782)"><rect width="73.919772" height="73.919772" rx="0" ry="0" transform="matrix(2.043489 0 0 1 667.830063 489.670277)" fill="currentColor" stroke-width="0"/><rect width="73.919772" height="73.919772" rx="0" ry="0" transform="matrix(2.043489 0 0 1 667.830063 361.371267)" fill="currentColor" stroke-width="0"/><rect width="82.275919" height="82.275919" rx="0" ry="0" transform="translate(988.92513 178.693013)" fill="currentColor" stroke-width="0"/><rect width="82.275919" height="82.275919" rx="0" ry="0" transform="matrix(1 0 0 4.833591 906.649211 260.583493)" fill="currentColor" stroke-width="0"/><rect width="82.275919" height="82.275919" rx="0" ry="0" transform="translate(988.92513 658.271634)" fill="currentColor" stroke-width="0"/></g></g></svg>
-  </div>
-  <div class="card-body">
-    <div class="flex flex-row justify-between">
-      <span class="inline-flex items-center font-semibold text-xl">UBlog</span>
-      <span class="inline-flex items-center text-lg text-right">No Access</span>
+<div class="min-h-screen min-w-full bg-base-200 flex justify-center items-center">
+  <div class="card card-normal shadow-2xl bg-base-100">
+    <div class="bg-base-300 rounded-t-2xl">
+      <svg class="text-gray-900 dark:text-gray-100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><g transform="translate(-40.495178-.000007)"><g transform="matrix(1.483052 0 0 1.483052-289.041621-141.640782)"><rect width="73.919772" height="73.919772" rx="0" ry="0" transform="matrix(2.043489 0 0 1 667.830063 489.670277)" fill="currentColor" stroke-width="0"/><rect width="73.919772" height="73.919772" rx="0" ry="0" transform="matrix(2.043489 0 0 1 667.830063 361.371267)" fill="currentColor" stroke-width="0"/><rect width="82.275919" height="82.275919" rx="0" ry="0" transform="translate(988.92513 178.693013)" fill="currentColor" stroke-width="0"/><rect width="82.275919" height="82.275919" rx="0" ry="0" transform="matrix(1 0 0 4.833591 906.649211 260.583493)" fill="currentColor" stroke-width="0"/><rect width="82.275919" height="82.275919" rx="0" ry="0" transform="translate(988.92513 658.271634)" fill="currentColor" stroke-width="0"/></g></g></svg>
     </div>
-    <p>You do not have permission to access this page.</p>
-    <div class="card-actions">
-      <a href="/{{currentUser.details.username}}" class="btn btn-primary btn-block">Return to Home</a>
+    <div class="card-body">
+      <div class="flex flex-row justify-between">
+        <span class="inline-flex items-center font-semibold text-xl">UBlog</span>
+        <span class="inline-flex items-center text-lg text-right">No Access</span>
+      </div>
+      <p>You do not have permission to access this page.</p>
+      <div class="card-actions">
+        <a href="/{{currentUser.details.username}}" class="btn btn-primary btn-block">Return to Home</a>
+      </div>
     </div>
   </div>
 </div>
