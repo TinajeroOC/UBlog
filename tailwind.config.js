@@ -9,15 +9,13 @@ module.exports = {
         12: '12',
         14: '14',
         16: '16',
+      },
+      gridTemplateColumns: {
+        16: 'repeat(16, minmax(0, 1fr))'
+      },
+      screens: {
+        xs: '480px',
       }
-    },
-    screens: {
-      'xs': '480px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px'
     },
   },
   plugins: [require("daisyui")],
